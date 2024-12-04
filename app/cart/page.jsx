@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 const CartPage = () => {
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) || []);
+  const [cart, setCart] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [address, setAddress] = useState({
     street: '',
@@ -14,6 +14,13 @@ const CartPage = () => {
   });
   const router = useRouter();
 
+  useEffect(() => {
+    const cart = localStorage.getItem('cart');
+    if (cart) {
+      setCart(JSON.parse(cart));
+    }
+  }, []);
+  
   const getTotal = () => {
     return cart.reduce((total, item) => total + item.value * item.quantity, 0);
   };
