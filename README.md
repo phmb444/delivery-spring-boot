@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Como Rodar o Projeto
 
-## Getting Started
+Para rodar o projeto "delivery-spring-boot", siga os seguintes passos:
 
-First, run the development server:
+1. **Pré-requisitos**:
+   - Node.js (versão 20.12.1)
+   - Docker (opcional, para rodar o projeto em um contêiner)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Clonar o repositório**:
+   ```
+   git clone https://github.com/phmb444/delivery-spring-boot.git
+   cd delivery-spring-boot
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Instalar dependências**:
+   ```
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+4. **Rodar o projeto em modo de desenvolvimento**:
+   ```
+   npm run dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+5. **Construir o projeto para produção**:
+   ```
+   npm run build
+   ```
 
-## Learn More
+6. **Rodar o projeto em modo de produção**:
+   ```
+   npm start
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+7. **Usar Docker (opcional)**:
+   - Construir a imagem Docker:
+     ```
+     docker build -t delivery-spring-boot .
+     ```
+   - Rodar o contêiner Docker:
+     ```
+     docker run -p 3000:3000 delivery-spring-boot
+     ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Estrutura do Projeto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A estrutura principal do projeto é a seguinte:
 
-## Deploy on Vercel
+- **package.json**: Arquivo de configuração do npm, que inclui as dependências e scripts necessários para rodar e construir o projeto.
+- **Dockerfile**: Arquivo de configuração para construir a imagem Docker do projeto.
+- **src/**: Diretório contendo o código-fonte do projeto.
+  - **pages/**: Contém as páginas da aplicação Next.js.
+  - **public/**: Contém arquivos estáticos acessíveis publicamente.
+  - **styles/**: Contém arquivos de estilo (CSS).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Detalhes Adicionais
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- O projeto usa Next.js como framework principal.
+- As dependências principais incluem React e TailwindCSS.
+- O projeto expõe a aplicação na porta 3000.
+
+Para mais detalhes, consulte os arquivos [package.json](https://github.com/phmb444/delivery-spring-boot/blob/main/package.json) e [Dockerfile](https://github.com/phmb444/delivery-spring-boot/blob/main/Dockerfile).
